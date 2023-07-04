@@ -1,0 +1,134 @@
+li{
+    list-style: none;
+}
+.home-full-screen{
+    padding: 0 4%;
+}
+
+.home-body-left-title {
+    font-size: 52px;
+    max-width: 40vw;
+    padding-top: 3vw;
+}
+
+.home-body {
+    width: 100%;
+    display: flex;
+}
+
+.home-body-left-detail {
+    width: 60%;
+}
+
+.about-body-left-detail {
+    width: 40%;
+    margin-top: 10%;
+}
+
+.home-body-left-description {
+    color: rgb(90, 89, 89);
+}
+
+.home-body-right-img {
+    height: 41vw;
+    width: 60%;
+    background-image: url("../resources/images/home.jpeg");
+    background-repeat: no-repeat;
+    object-fit: contain;
+}
+
+.about-image {
+    width: 100%;
+    background-image: url("https://media.istockphoto.com/id/1360092910/photo/words-with-about-us-web-concept-idea.jpg?b=1&s=170667a&w=0&k=20&c=8ER5GnlVth7iPBW1_5rVcvaXOmpDWdkPfRqcqgnS-mc=");
+    background-repeat: no-repeat;
+    object-fit: contain;
+}
+
+.home-body-left-signin {
+    margin-top: 2vw;
+    font-weight: 600;
+    border: none;
+    background-color: transparent;
+}
+
+.home-body-left-signin:hover {
+    opacity: 0.7;
+}
+
+.home-body-left-learnMore {
+    background-color: #C3DCE3;
+    color: #2B788B;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+    margin-left: 2vw;
+    font-weight: 600;
+}
+
+.home-body-left-learnMore:hover {
+    opacity: 0.8;
+}
+
+.home-body-left-count {
+    margin-top: 4vw;
+    display: flex;
+    justify-content: space-around;
+    max-width: 26vw;
+}
+
+.home-body-left-count-thunder-icon{
+    color: #2B788B;
+}
+.home-body-left-count-list{
+    font-size: 32px;
+    font-weight: 800;
+    display: flex;
+}
+.home-body-left-count-list-text{
+    color: grey;
+    font-size: 14px;
+}
+
+/* Teacher Signin Styles */
+.home-body-right-img-signin{
+    background-image: url("../resources/images/sub-home.jpeg");
+    height: 400px;
+    width: 580px;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    margin-left: 50px;
+}
+.home-body-left-title-text{
+    font-size: 34px;
+    color: black;
+    font-weight: 700;
+    padding-top: 70px;
+}
+.home-body-left-detail-text{
+    font-size: 20px;
+    color: black;
+    max-width: 300px;
+}
+.home-body-left{
+    margin-left: 200px;
+}
+.home-body-left-get-started{
+    margin-top: 70px;
+    background-color: #4D3FA7;
+    color: white;
+    border: none;
+    padding: 20px;
+    width: 200px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.home-body-left-get-started:hover{
+    opacity: 0.7;
+}
+
+@media only screen and (max-width: 1100px) {
+    .home-body-left-count{
+        max-width: 40vw;
+    }
+    
+  }

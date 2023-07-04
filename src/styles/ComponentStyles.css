@@ -1,0 +1,351 @@
+/* Course Card Styles */
+
+.course-card-container{
+    display: flex;
+    height: auto;
+    width: auto;
+}
+
+.course-card-content{
+    height: auto;
+    width: 250px;
+    margin-right: 2rem;
+}
+
+.course-card-content:hover + .course-card-description-content{
+    opacity: 1;
+}
+.course-card-description-content:hover{
+    opacity: 1;
+}
+
+.course-card-img-content, .course-card-img{
+    width: 100%;
+    height: 150px;
+}
+
+.course-card-title{
+    font-size: 18px;
+    text-align: left;
+}
+
+.related-course-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.related-course-card {
+    width: auto;
+    padding: 10px;
+    border: solid black 1px;
+    box-shadow: 0 1px rgb(110, 109, 109);
+}
+
+.course-card-description-content {
+    position: absolute;
+    max-width: 300px;
+    background-color: #A8C2C2;
+    opacity: 0;
+    margin-left: 15%;
+    bottom: 21%;
+    padding: 15px;
+}
+
+.course-card-rating-content {
+    display: flex;
+    color: rgb(255, 196, 0);
+}
+
+.rating-star-set {
+    color: rgb(255, 196, 0);
+    margin-left: 2vw;
+}
+
+
+.course-container-tab-bar-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 20px;
+    padding: 1%;
+    cursor: pointer;
+}
+
+.course-container-tab-bar-btn-active {
+    background-color: #2B788B;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 20px;
+    padding: 1%;
+    cursor: pointer;
+    color: white;
+}
+
+.course-card-add-to-cart-btn {
+    background-color: blueviolet;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.course-card-add-to-cart-btn:hover {
+    opacity: 0.7;
+}
+
+/* Shopping Cart Card Styles */
+.shopping-cart-card-container {
+    height: 150px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 0 13px 2px rgba(201, 201, 201, 1);
+    -moz-box-shadow: 0 0 13px 2px rgba(201, 201, 201, 1);
+    box-shadow: 0 0 13px 2px rgba(201, 201, 201, 1);
+    display: flex;
+    margin-top: 40px;
+}
+
+.shopping-cart-card-course-content {
+    height: 100%;
+    width: 20%;
+}
+
+.shopping-cart-card-course-img {
+    width: 250px;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.shopping-cart-card-course-detail {
+    height: 100%;
+    width: 30%;
+    margin-left: 2rem;
+}
+
+.shopping-cart-card-course-price {
+    height: 100%;
+    width: 25%;
+    margin-left: 5rem;
+}
+
+.shopping-cart-card-course-total-price {
+    height: 100%;
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-right: 2rem;
+}
+
+.shopping-cart-card-checkout-btn {
+    padding: 10%;
+    background-color: #2B788B;
+    color: white;
+    border: none;
+    font-size: 20px;
+    border-radius: .8vw;
+    margin-right: 2rem;
+    float: right;
+}
+
+.shopping-cart-card-checkout {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Course Info Card Styles */
+.course-info-card {
+    height: auto;
+    width: 400px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px grey;
+}
+
+.course-info-card-content{
+    height: auto;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(115, 146, 108);
+    padding: 1px;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* User Course Info Styles */
+.course-info-full-screen{
+    height: 50vw;
+    width: 100%;
+}
+
+.course-info-content{
+    height: 600px;
+    width: 100%;
+    display: flex;
+}
+
+.course-info-completed{
+    height: 100%;
+    width: 50%;
+    margin-left: 8rem;
+}
+.course-info-ongoing{
+    height: 100%;
+    width: 50%;
+}
+
+/* Earnings Card */
+.teacher-dash-course-card{
+    border: 1.5px solid black;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    padding: 2%;
+}
+
+/* Forum Styles */
+.teacher-dash-forum-card{
+    margin: 0 10% 10% 10%;
+}
+.teacher-dash-forum-chat-box{
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 1% 5%;
+}
+
+.teacher-dash-forum-chat-input{
+    width: 100%;
+}
+
+.teacher-dash-forum-chat-input-box{
+    padding-top: 1rem;
+    margin-right: 1rem;
+    width: 40%;
+    border-radius: 4px;
+}
+
+.teacher-dash-forum-chat-content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.teacher-dash-forum-chat-reply{
+    text-align: right;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.teacher-dash-forum-chat-content::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Add Course Form Styles */
+.add-course-form-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 0.5rem;
+}
+
+.add-course-form-input {
+    border-radius: 5px;
+    border: 2px solid #949494;
+    padding: 1% 3%;
+}
+
+.add-course-form-input-description {
+
+}
+
+.add-course-form-button {
+    height: 4rem;
+    width: 10rem;
+    background-color: rgb(144, 185, 247);
+    font-weight: 650;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 4rem 2rem 2rem auto;
+  }
+
+  .add-course-form-button:hover{
+    opacity: 0.8;
+  }
+
+  .add-course-form-content2{
+    height: 75%;
+    width: 70%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+    left: 30%;
+    top: 5%;
+    position: absolute;
+    background-color: white;
+    z-index: 1000;
+    display: none;
+  }
+
+  .add-course-form-file-input{
+    height: 5rem;
+    margin-top: 2rem;
+  }
+
+  .add-course-form-submit-button{
+    height: 3rem;
+  }
+
+  .add-course-form-file-input-lesson::-webkit-file-upload-button,   .add-course-form-file-input-video::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+
+  .add-course-form-file-input-lesson::before {
+    content: 'Drag and Drop your lessons';
+    display: inline-block;
+    background-color: rgb(189, 188, 188);
+    border: 2px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+    height: 4rem;
+    width: 400px;
+  }
+  
+  .add-course-form-file-input-video::before {
+    content: 'Drag and Drop your videos';
+    display: inline-block;
+    background-color: rgb(189, 188, 188);
+    border: 2px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+    height: 4rem;
+    margin-top: 2rem;
+    width: 400px;
+  }
+  
+  .add-course-form-input-error-msg{
+    color: rgb(202, 2, 2);
+  }
+

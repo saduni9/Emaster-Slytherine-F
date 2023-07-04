@@ -1,0 +1,116 @@
+.signin-body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.signin-body-form{
+    height: 100%;
+    width: 40%;
+    margin-left: 10%;
+    margin-right: 5%;
+}
+
+.signin-body-right{
+    height: 100%;
+    width: 50%;
+}
+
+.signin-body-right-img{
+    height: 450px;
+    width: 320px;
+    margin-right: 25%;
+    object-fit: contain;
+   
+}
+
+.signin-body-right-already-member-btn{
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.signin-body-right-already-member-btn:hover{
+    color: rgb(11, 63, 87);
+}
+
+.signin-username{
+    border: none;
+    height: 30px;
+    width: 300px;
+    margin-left: 8px;
+}
+
+.signin-body-form-input-list{
+    margin-top: 20px;
+    border-bottom: 1px solid black;
+}
+
+.signin-body-form-input-list-checkbox{
+    margin-top: 40px;
+}
+
+.register-btn{
+    background-color: #66A0F6;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    font-weight: 600;
+    border: none;
+}
+
+.register-btn:hover{
+    opacity: 0.8;
+}
+
+.signin-form-social-media-btn-set{
+    justify-content: space-around;
+    margin-top: 14px;
+
+}
+
+.signin-body-form-input-list-continue-with{
+    color: rgb(94, 92, 92);
+    font-size: 14px;
+}
+
+.signin-body-form-input-list-social-btn{
+    display: block;
+   
+}
+
+.signin-title-start-teach{
+    font-size: 28px;
+    color: rgb(94, 92, 92);
+}
+
+.signin-title{
+    padding-left: 35px;
+}
+
+
+/* Sign-In Page Styles */
+
+.signin-body-form-right{
+    height: 100%;
+    width: 60%;
+    margin-left: 10%;
+    margin-right: 5%;
+}
+
+.signin-body-left{
+    height: 100%;
+    width: 40%;
+    margin-left: 10vw;
+}
+
+.create-acc-btn{
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    margin-top: 30px;
+}
+
+.create-acc-btn:hover{
+    color: rgb(11, 63, 87);
+}
