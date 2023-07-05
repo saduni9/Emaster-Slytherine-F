@@ -64,7 +64,7 @@ export default function ShoppingCartCard() {
 
     return (
         <>
-            {course.map((data) => (
+            {Array.isArray(course) && course.map((data) => (
                 <div className="shopping-cart-card-container" key={data.cart_id}>
                     <div className="shopping-cart-card-course-img-content">
                         <img src={data.course.course_imgUrl} className="shopping-cart-card-course-img"  alt="course image"/>

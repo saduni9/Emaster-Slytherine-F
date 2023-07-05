@@ -16,6 +16,9 @@ import EarningsCard from "../src/components/EarningsCard";
 import MyCoursesCard from "../src/components/MyCoursesCard";
 import Forum from "../src/components/Forum";
 import AboutUs from "./pages/AboutUs";
+import ForgotPassword from  "./pages/ForgetP"
+import ResetPassword from "./pages/ResetP";
+
 
 function App() {
   return (
@@ -37,6 +40,8 @@ function App() {
               <Route path="/my_courses_card" element={<MyCoursesCard/>}/>
               <Route path="/forum" element={<Forum/>}/>
               <Route path="/add_course" element={<AddCourseForm/>}/>
+              <Route path="/forgotPassword" element={<ForgotPassword/>}/>
+              <Route path="/resetPassword" element={<ResetPassword/>}/>
       </Routes>
 
 
