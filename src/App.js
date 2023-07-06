@@ -41,7 +41,7 @@ function App() {
               <Route path="/forum" element={<Forum/>}/>
               <Route path="/add_course" element={<AddCourseForm/>}/>
               <Route path="/forgotPassword" element={<ForgotPassword/>}/>
-              <Route path="/resetPassword" element={<ResetPassword/>}/>
+              <Route path="/ResetPassword/:id/:token" element={<ResetPassword/>}/>
       </Routes>
 
 

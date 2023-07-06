@@ -73,9 +73,16 @@ export default function CourseCard() {
             })
     }
 
-    const filteredPopularCourse = popularCourse.filter((course) => course.course_title.toLowerCase().startsWith(searchTerm.toLowerCase()));
-    const filteredOngoingCourse = ongoingCourse.filter((course) => course.course.course_title.toLowerCase().startsWith(searchTerm.toLowerCase()));
-
+    // const filteredPopularCourse = popularCourse.filter((course) => course.course_title.toLowerCase().startsWith(searchTerm.toLowerCase()));
+    // const filteredOngoingCourse = ongoingCourse.filter((course) => course.course.course_title.toLowerCase().startsWith(searchTerm.toLowerCase()));
+    const filteredPopularCourse = popularCourse.filter((course) => {
+        const title = course.course_title;
+        return title && title.toLowerCase().startsWith(searchTerm.toLowerCase());
+      })
+      const filteredOngoingCourse = ongoingCourse.filter((course) => {
+        const title = course.course.course_title;
+        return title && title.toLowerCase().startsWith(searchTerm.toLowerCase());
+      });
 
     return (
         <>

@@ -1,7 +1,7 @@
 import React ,{useState}from "react";
 import "../styles/InputFormStyles.css";
 import NavBar from "../components/NavBar";
-import {Link, useNavigate} from 'react-router-dom';
+import {Link, useNavigate,useParams} from 'react-router-dom';
 import img from "../resources/images/stu-signin.jpeg";
 import {ErrorMessage, Field, Form, Formik} from 'formik';
 import * as Yup from 'yup';
@@ -17,8 +17,14 @@ import server from "../apis/server";
 
 export default function ResetPassword() {
     const navigate = useNavigate();
+    const { id, token } = useParams();
     const[password, setPassword] = useState("");
     const[repPassword, setRepPassword] = useState("");
+    const[message, setMessage] = useState("");
+    
+
+
+    console.log(token)
 
     const initialValues = {
        
@@ -32,23 +38,18 @@ export default function ResetPassword() {
     });
 
     const onSubmit = (values) => {
-        console.log(values);
+        console.log('hiiiiiiiiiiiiiiiiiiiiii');
         server
-            .post("/auth/login", {
-                email: values.email,
-                password: values.password
+            .post(`/auth/reset/${id}/${token}`, {
+                new_password:password
             })
             .then((res) => {
-                console.log("result : ", res.data);
-                localStorage.setItem('user', res.data.token);
-                localStorage.setItem('role', res.data.role);
-                if (res.data.role === "teacher") {
-                    navigate('/teacher_dash');
-                } else if (res.data.role === "student") {
-                    navigate('/course_detail');
-                } else if (res.data.role === "admin") {
-                    navigate('/admin_dash');
+                if (res.status===200){
+                    setMessage(res.data.message)
+                    
+
                 }
+                console.log(res);
             })
             .catch((err) => {
                 alert(err)
@@ -98,7 +99,10 @@ export default function ResetPassword() {
 
                                         
                                         <li>
+                                        <p>{message}</p>
+
                                             <button type="submit"
+                                            onClick={onSubmit}
                                                     className="signin-body-form-input-list register-btn">Reset
                                             </button>
                                         </li>
