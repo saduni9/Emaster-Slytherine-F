@@ -1,17 +1,18 @@
-import React from "react";
+import React,{useState} from "react";
 import * as Yup from "yup";
 import "../styles/InputFormStyles.css";
 import NavBar from "../components/NavBar";
 import {Link, useNavigate} from "react-router-dom";
 import img from "../resources/images/teacher_reg.jpeg";
+import {getDownloadURL, ref, uploadBytesResumable} from 'firebase/storage';
+import {storage} from '../config/firebaseConfig';
+
 
 //Form Icons
-import {FaFacebook, FaUserAlt,} from "react-icons/fa";
+
 import {GrMail} from "react-icons/gr";
 import {RiLockPasswordFill, RiLockPasswordLine} from "react-icons/ri";
 import {HiClipboard} from "react-icons/hi";
-import {FcGoogle} from "react-icons/fc";
-import {AiFillTwitterCircle} from "react-icons/ai";
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import server from "../apis/server";
 
@@ -26,6 +27,12 @@ const validationSchema = Yup.object().shape({
 
 
 export default function StudentReg() {
+
+    
+    const [pdf, setPdf] = useState(null);
+    const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(null);
+    const [pdfUrl, setPdfUrl] = useState(null);//
     const navigate = useNavigate();
 
     function handleReg(values) {
@@ -39,6 +46,7 @@ export default function StudentReg() {
                     email: values.email,
                     password: values.password,
                     qualification: values.qualification,
+                    // qualification: pdfUrl,//
                 },
                 {
                     headers: {
@@ -66,6 +74,63 @@ export default function StudentReg() {
         qualification: '',
         termsOfService: false
     };
+    
+   
+
+
+
+
+    const handleUpload = (event) => {
+        const selectedFile = event.target.files[0]; // Get the first selected file
+        setPdf(selectedFile); // Set the PDF file
+       
+      
+        // You can perform any additional logic or validations here
+      
+        // Example: Accessing the file name and size
+        console.log("Selected PDF File:", selectedFile.name);
+        console.log("File Size:", selectedFile.size);
+      };
+
+     
+          
+            const uploadPdf =  () => {
+                setSuccess(null)
+                setError(null)
+                const currentDate = new Date();
+                const timestamp = currentDate.getTime(); //today date and time save file generate unique file name using pdf name and timestamp
+                const uniqueFileName = `${pdf.name}_${timestamp}.pdf`;
+                const storageRef = ref(storage, `qualifications/${uniqueFileName}`);
+                const uploadTask = uploadBytesResumable(storageRef, pdf);
+          
+            return new Promise((resolve, reject) => {
+              uploadTask.on(
+                'state_changed',
+                (snapshot) => {
+                    const progress =
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                  console.log("Upload is " + progress + "% done");
+                },
+                (error) => {
+                    reject(error);
+                    setError('upload fail')
+
+                  },
+                  async () => {
+                    const url = await getDownloadURL(uploadTask.snapshot.ref);
+                    resolve(url);
+                    setSuccess('Sucessfully uploaded')
+                    setPdfUrl(url)
+                    console.log(url)
+                  }
+                );
+              });
+            };
+           
+     
+
+
+   
 
     return (
         <>
@@ -115,12 +180,18 @@ export default function StudentReg() {
                                             </li>
                                             <li className="signin-body-form-input-list">
                                                 <HiClipboard size={20}/>
-                                                <Field type="text" className="signin-username"
-                                                       placeholder="Qualifications"
-                                                       name="qualification" required/>
+                                                <input type="file" accept="application/pdf" onChange={handleUpload} className="add-course-form-input" />
                                                 <ErrorMessage name="qualification" component="div"
                                                               className="error-message"/>
                                             </li>
+                                            <li><button type="button"
+                                                onClick={uploadPdf}
+                                              disabled={pdf === null}
+                                             >Upload Pdf
+                                              </button></li>
+                                              <li><p style={{color:"green"}}>{success} </p></li>
+                                              <li><p style={{color:"red"}}>{error} </p></li>
+
                                             <li className="signin-body-form-input-list-checkbox">
                                                 <label>
                                                     <Field type="checkbox" name="termsOfService" required/>

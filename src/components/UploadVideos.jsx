@@ -13,11 +13,7 @@ const UploadVideos = ({setAddLessonForm}) => {
     const [urls, setUrls] = useState([]);
     const [coursesList, setCoursesList] = useState([]);
 
-    const handleUpload = (event) => {
-        const selectedFiles = Array.from(event.target.files);
-        setVideos(selectedFiles);
-        setProgressBars(selectedFiles.map(() => 0));
-    };
+    
 
     function getCourses() {
         server.get("/teacher/getCourses",
