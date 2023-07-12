@@ -6,12 +6,9 @@ import {Link, useNavigate} from "react-router-dom";
 import img from "../resources/images/stu_reg.jpeg";
 
 //Form Icons
-import {FaFacebook, FaUserAlt,} from "react-icons/fa";
+import {FaUserAlt} from "react-icons/fa";
 import {GrMail} from "react-icons/gr";
 import {RiLockPasswordFill, RiLockPasswordLine} from "react-icons/ri";
-import {HiClipboard} from "react-icons/hi";
-import {FcGoogle} from "react-icons/fc";
-import {AiFillTwitterCircle} from "react-icons/ai";
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import server from "../apis/server";
 
@@ -19,7 +16,7 @@ const validationSchema = Yup.object().shape({
     firstName: Yup.string().required('First name is required'),
     email: Yup.string().email('Invalid email').required('Email is required'),
     password: Yup.string().required('Password is required'),
-    repPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match').required('Repeat password is required'),
+    repPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match'),
     termsOfService: Yup.boolean().oneOf([true], 'Must accept terms of service')
 });
 

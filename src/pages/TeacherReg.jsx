@@ -6,6 +6,8 @@ import {Link, useNavigate} from "react-router-dom";
 import img from "../resources/images/teacher_reg.jpeg";
 import {getDownloadURL, ref, uploadBytesResumable} from 'firebase/storage';
 import {storage} from '../config/firebaseConfig';
+import { FaUserAlt } from 'react-icons/fa';
+
 
 
 //Form Icons

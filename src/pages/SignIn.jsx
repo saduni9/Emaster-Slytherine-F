@@ -7,11 +7,9 @@ import {ErrorMessage, Field, Form, Formik} from 'formik';
 import * as Yup from 'yup';
 
 // Form Icons
-import {FaFacebook} from "react-icons/fa";
+
 import {GrMail} from "react-icons/gr";
 import {RiLockPasswordFill} from "react-icons/ri";
-import {FcGoogle} from "react-icons/fc";
-import {AiFillTwitterCircle} from "react-icons/ai";
 import server from "../apis/server";
 
 export default function SignIn() {
