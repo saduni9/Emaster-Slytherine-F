@@ -19,7 +19,7 @@ import {ErrorMessage, Field, Form, Formik} from "formik";
 import server from "../apis/server";
 
 const validationSchema = Yup.object().shape({
-    firstName: Yup.string().required('First name is required'),
+    firstName: Yup.string().required('Full name is required'),
     email: Yup.string().email('Invalid email').required('Email is required'),
     password: Yup.string().required('Password is required'),
     repPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match').required('Repeat password is required'),
@@ -37,6 +37,7 @@ export default function StudentReg() {
     const [pdfUrl, setPdfUrl] = useState(null);//
     const navigate = useNavigate();
 
+    
     function handleReg(values) {
         console.log(values);
 
@@ -47,8 +48,8 @@ export default function StudentReg() {
                     name: values.firstName,
                     email: values.email,
                     password: values.password,
-                    qualification: values.qualification,
-                    // qualification: pdfUrl,//
+                    // qualification: values.qualification,
+                    qualification: pdfUrl,
                 },
                 {
                     headers: {
@@ -148,43 +149,55 @@ export default function StudentReg() {
                             initialValues={initialValues}
                             validationSchema={validationSchema}
                             onSubmit={handleReg}>
-                            {() => (
+                            {(formik) => (
                                 <Form>
                                     <div>
                                         <ul>
                                             <li className="signin-body-form-input-list">
                                                 <FaUserAlt size={20}/>
-                                                <Field type="text" className="signin-username" placeholder="First Name"
-                                                       name="firstName" required/>
+                                                <Field type="text" className="signin-username" placeholder="Full Name"
+                                                       name="firstName"
+                                                       value={formik.values.firstName}
+                                                       onChange={formik.handleChange} 
+                                                       
+                                                       required/>
                                                 <ErrorMessage name="firstName" component="div"
                                                               className="error-message"/>
                                             </li>
                                             <li className="signin-body-form-input-list">
                                                 <GrMail size={20}/>
                                                 <Field type="email" className="signin-username" placeholder="Your email"
-                                                       name="email" required/>
+                                                       name="email" 
+                                                       value={formik.values.email}
+                                                       onChange={formik.handleChange}
+                                                       required/>
                                                 <ErrorMessage name="email" component="div" className="error-message"/>
                                             </li>
                                             <li className="signin-body-form-input-list">
                                                 <RiLockPasswordFill size={20}/>
                                                 <Field type="password" className="signin-username"
                                                        placeholder="Password"
-                                                       name="password" required/>
+                                                       name="password" 
+                                                       value={formik.values.password}
+                                                       onChange={formik.handleChange}
+                                                       required/>
                                                 <ErrorMessage name="password" component="div"
                                                               className="error-message"/>
                                             </li>
                                             <li className="signin-body-form-input-list">
                                                 <RiLockPasswordLine size={20}/>
                                                 <Field type="password" className="signin-username"
-                                                       placeholder="Repeat Password" name="repPassword" required/>
+                                                       placeholder="Repeat Password" name="repPassword" 
+                                                       value={formik.values.repPassword}
+                                                       onChange={formik.handleChange}
+                                                       required/>
                                                 <ErrorMessage name="repPassword" component="div"
                                                               className="error-message"/>
                                             </li>
                                             <li className="signin-body-form-input-list">
                                                 <HiClipboard size={20}/>
                                                 <input type="file" accept="application/pdf" onChange={handleUpload} className="add-course-form-input" />
-                                                <ErrorMessage name="qualification" component="div"
-                                                              className="error-message"/>
+                                                
                                             </li>
                                             <li><button type="button"
                                                 onClick={uploadPdf}
@@ -203,7 +216,7 @@ export default function StudentReg() {
                                                               className="error-message"/>
                                             </li>
                                             <li>
-                                                <button type="submit"
+                                                <button type ="submit" onClick={formik.handleSubmit}
                                                         className="signin-body-form-input-list register-btn">Register
                                                 </button>
                                             </li>

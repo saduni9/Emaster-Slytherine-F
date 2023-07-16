@@ -13,10 +13,11 @@ export default function AboutUs() {
                             About Us
                         </h1>
                         <p className="home-body-left-description">
-                            You don’t need to outright say, “our mission is ____,” but you should convey the mission of
-                            your business in your About Us copy. This is key for attracting talent, as well as leads
-                            that have Corporate Social Responsibility (CSR) goals.
+                        Welcome to eMaster, where knowledge meets convenience. We are passionate about providing an engaging and accessible online learning platform that empowers individuals to unlock their full potential, anytime and anywhere.
                         </p>
+                        <p className="home-body-left-description">
+                        We believe that education should be a lifelong journey, and our eLearning system is designed to make that journey as enjoyable and enriching as possible.
+                         </p>
                     </div>
                     <div className="home-body-right-img"></div>
                 </div>

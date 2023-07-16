@@ -46,20 +46,24 @@ export default function ShoppingCartCard() {
     }, []);
 
     const removeFromCart = (id) => {
-        server.delete("/student/removeCart/" + id,
-            {
-                headers: { "token": localStorage.getItem('user') }
+        
+            const confirmed = window.confirm("Are you sure you want to delete?");
+            if (confirmed) {
+              server.delete("/student/removeCart/" + id,
+                {
+                  headers: { "token": localStorage.getItem('user') }
+                }
+              )
+                .then((res) => {
+                  alert(res.data)
+                  console.log("result: ", res.data);
+                  getCart();
+                })
+                .catch((err) => {
+                  alert(err)
+                })
             }
-        )
-            .then((res) => {
-                alert(res.data)
-                console.log("result : ", res.data);
-                getCart();
-            })
-            // Catch errors if any
-            .catch((err) => {
-                alert(err)
-            })
+          
     };
 
     return (

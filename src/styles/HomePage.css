@@ -31,7 +31,7 @@ li{
 
 .home-body-right-img {
     height: 41vw;
-    width: 60%;
+    width: 100%;
     background-image: url("../resources/images/home.jpeg");
     background-repeat: no-repeat;
     object-fit: contain;
@@ -80,9 +80,13 @@ li{
     color: #2B788B;
 }
 .home-body-left-count-list{
-    font-size: 32px;
-    font-weight: 800;
-    display: flex;
+    background-color: #bfc5c7;
+    color: #2B788B;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+    margin-left: 2vw;
+    font-weight: 600;
 }
 .home-body-left-count-list-text{
     color: grey;

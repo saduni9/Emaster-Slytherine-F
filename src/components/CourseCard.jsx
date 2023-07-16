@@ -212,7 +212,7 @@ export default function CourseCard() {
                     </div>
                 </div>
             )}
-            <div><h3>You Can Also Learn</h3>
+            {/* <div><h3>You Can Also Learn</h3>
                 <div className="related-course-content">
                     {relatedCourses.map((data, id) => (
                         <div key={id} className="related-course-card">
@@ -221,7 +221,7 @@ export default function CourseCard() {
                             </h3>
                         </div>))}
                 </div>
-            </div>
+            </div> */}
         </>
     );
 }

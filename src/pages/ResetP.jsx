@@ -38,6 +38,11 @@ export default function ResetPassword() {
     });
 
     const onSubmit = (values) => {
+        if(password != repPassword){
+            setMessage("password doesn't match")
+            return
+        }
+
         console.log('hiiiiiiiiiiiiiiiiiiiiii');
         server
             .post(`/auth/reset/${id}/${token}`, {

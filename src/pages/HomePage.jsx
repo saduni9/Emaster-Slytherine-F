@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/HomePage.css";
 import NavBar from "../components/NavBar";
-import {AiFillThunderbolt, AiOutlineArrowRight} from "react-icons/ai";
+import {AiFillThunderbolt, AiOutlineArrowRight, AiOutlineFire, AiOutlineClockCircle} from "react-icons/ai";
 import {Link} from "react-router-dom";
 
 export default function HomePage() {
@@ -25,19 +25,20 @@ export default function HomePage() {
                         </Link>
                         <div className="home-body-left-count">
                             <div className="home-body-left-count-list">
-                                <AiFillThunderbolt size={40} className="home-body-left-count-thunder-icon"/>
-                                <div>700+ <br/>
-                                    <span className="home-body-left-count-list-text">Hours of Content</span>
+                                <AiOutlineFire size={40} className="home-body-left-count-thunder-icon"/>
+                                <div>POWERFUL PROGRAM <br/>
+                                    <span className="home-body-left-count-list-text">Our courses are up to date with latest syllabus</span>
                                 </div>
                             </div>
                             <div className="home-body-left-count-list">
-                                <AiFillThunderbolt size={40} className="home-body-left-count-thunder-icon"/>
-                                <div>575k <br/>
-                                    <span className="home-body-left-count-list-text">Active Users</span>
+                                <AiOutlineClockCircle size={40} className="home-body-left-count-thunder-icon"/>
+                                <div>24/7 SUPPORT <br/>
+                                    <span className="home-body-left-count-list-text">Anytime support from our course providers</span>
                                 </div>
                             </div>
 
                         </div>
+
                     </div>
                     <div className="home-body-right-img"></div>
                 </div>

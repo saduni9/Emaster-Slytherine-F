@@ -72,15 +72,7 @@ export default function StudentReg()
                         <li>
                             <button type="submit" onClick={handleReg} className="signin-body-form-input-list register-btn">Register</button>
                         </li>
-                        <li className="signin-body-form-input-list-social-btn">
-                            <p className="signin-body-form-input-list-continue-with"> Continue With </p>
-                            <div className="signin-form-social-media-btn-set" style={{marginRight:'40%'}}>
-                                <FcGoogle size={20}/>
-                                <AiFillTwitterCircle size={20}/>
-                                <FaFacebook size={20}/>   
-                            </div>
-                          
-                        </li>
+                       
                     </ul>
                 </div>
                 <div className="signin-body-right">
