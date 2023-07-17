@@ -62,7 +62,7 @@ export default function SignIn() {
 
                     </div>
                     <div className="signin-body-form-right">
-                        <h1 className="signin-title">Sign in</h1>
+                        <h1 className="signin-title">Login</h1>
                         <Formik
                             initialValues={initialValues}
                             validationSchema={validationSchema}
@@ -90,28 +90,32 @@ export default function SignIn() {
                                         </li>
 
 
-                                        <li className="signin-body-form-input-list-checkbox">
+                                        {/* <li className="signin-body-form-input-list-checkbox">
                                             <input type="checkbox"/>Remeber Me
-                                        </li>
+                                        </li> */}
                                         <li>
                                             <button type="submit"
                                                     className="signin-body-form-input-list register-btn">Login
                                             </button>
                                         </li>
 
+                                        <div style={{display:"flex"}}>
+
                                         <li className="signin-body-form-input-list-social-btn">
                                             <Link to='/forgotPassword'>
-                                                <button type="button" className="create-acc-btn">Forgot Password
+                                                <button type="button" className="create-acc-btn"style={{textDecoration:'none'}}>Forgot Password
                                                 </button>
                                             </Link>
                                         </li>
+                                        
 
                                         <li className="signin-body-form-input-list-social-btn">
                                             <Link to='/student_reg'>
-                                                <button type="button" className="create-acc-btn">Create an account
+                                                <button type="button" className="create-acc-btn" style={{textDecoration:'none'}}>Create an account
                                                 </button>
                                             </Link>
                                         </li>
+                                        </div>
                                        
                                     </ul>
                                 </Form>

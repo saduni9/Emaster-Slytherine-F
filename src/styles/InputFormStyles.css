@@ -115,5 +115,21 @@
     color: rgb(11, 63, 87);
 }
 
+.signin-body-form{
 
+        border: 1px solid lightblue;
+        background-color: aliceblue;
+        padding: 20px;
+    
+      
+}
+
+.signin-body-form-right{
+   
+        border: 1px solid lightblue;
+        background-color: aliceblue;
+        padding: 20px;
+      
+      
+}
   

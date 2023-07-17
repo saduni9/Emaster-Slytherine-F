@@ -17,7 +17,7 @@ const validationSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Email is required'),
     password: Yup.string().required('Password is required'),
     repPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match'),
-    termsOfService: Yup.boolean().oneOf([true], 'Must accept terms of service')
+    // termsOfService: Yup.boolean().oneOf([true], 'Must accept terms of service')
 });
 
 
@@ -58,7 +58,7 @@ export default function StudentRegister() {
         email: '',
         password: '',
         repPassword: '',
-        termsOfService: false
+        //termsOfService: false
     };
 
     return (
@@ -107,14 +107,14 @@ export default function StudentRegister() {
                                                 <ErrorMessage name="repPassword" component="div"
                                                               className="error-message"/>
                                             </li>
-                                            <li className="signin-body-form-input-list-checkbox">
+                                            {/* <li className="signin-body-form-input-list-checkbox">
                                                 <label>
                                                     <Field type="checkbox" name="termsOfService" required/>
                                                     I agree all the terms of Service
                                                 </label>
                                                 <ErrorMessage name="termsOfService" component="div"
                                                               className="error-message"/>
-                                            </li>
+                                            </li> */}
                                             <li>
                                                 <button type="submit"
                                                         className="signin-body-form-input-list register-btn">Register

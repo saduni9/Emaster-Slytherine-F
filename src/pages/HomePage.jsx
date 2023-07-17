@@ -18,7 +18,7 @@ export default function HomePage() {
                             Study Any Local Curriculum Lesson
                         </p>
                         <Link to="/signin">
-                            <button className="home-body-left-signin">SignIn <AiOutlineArrowRight size={10}/></button>
+                            <button className="home-body-left-signin">Login <AiOutlineArrowRight size={10}/></button>
                         </Link>
                         <Link to="/about">
                             <button className="home-body-left-learnMore">Learn More</button>

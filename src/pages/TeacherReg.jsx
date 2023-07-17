@@ -23,8 +23,8 @@ const validationSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Email is required'),
     password: Yup.string().required('Password is required'),
     repPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match').required('Repeat password is required'),
-    qualification: Yup.string().required('Qualification is required'),
-    termsOfService: Yup.boolean().oneOf([true], 'Must accept terms of service')
+    
+    // termsOfService: Yup.boolean().oneOf([true], 'Must accept terms of service')
 });
 
 
@@ -74,7 +74,7 @@ export default function StudentReg() {
         email: '',
         password: '',
         repPassword: '',
-        qualification: '',
+        
         termsOfService: false
     };
     
@@ -162,7 +162,7 @@ export default function StudentReg() {
                                                        
                                                        required/>
                                                 <ErrorMessage name="firstName" component="div"
-                                                              className="error-message"/>
+                                                              className="error-message"style={{color:'red'}}/>
                                             </li>
                                             <li className="signin-body-form-input-list">
                                                 <GrMail size={20}/>
@@ -171,7 +171,8 @@ export default function StudentReg() {
                                                        value={formik.values.email}
                                                        onChange={formik.handleChange}
                                                        required/>
-                                                <ErrorMessage name="email" component="div" className="error-message"/>
+                                                <ErrorMessage name="email" component="div" className="error-message"style={{color:'red'}}/>
+                                                
                                             </li>
                                             <li className="signin-body-form-input-list">
                                                 <RiLockPasswordFill size={20}/>
@@ -182,7 +183,7 @@ export default function StudentReg() {
                                                        onChange={formik.handleChange}
                                                        required/>
                                                 <ErrorMessage name="password" component="div"
-                                                              className="error-message"/>
+                                                              className="error-message"style={{color:'red'}}/>
                                             </li>
                                             <li className="signin-body-form-input-list">
                                                 <RiLockPasswordLine size={20}/>
@@ -192,7 +193,7 @@ export default function StudentReg() {
                                                        onChange={formik.handleChange}
                                                        required/>
                                                 <ErrorMessage name="repPassword" component="div"
-                                                              className="error-message"/>
+                                                              className="error-message"style={{color:'red'}}/>
                                             </li>
                                             <li className="signin-body-form-input-list">
                                                 <HiClipboard size={20}/>
@@ -207,16 +208,16 @@ export default function StudentReg() {
                                               <li><p style={{color:"green"}}>{success} </p></li>
                                               <li><p style={{color:"red"}}>{error} </p></li>
 
-                                            <li className="signin-body-form-input-list-checkbox">
+                                            {/* <li className="signin-body-form-input-list-checkbox">
                                                 <label>
                                                     <Field type="checkbox" name="termsOfService" required/>
                                                     I agree all the terms of Service
                                                 </label>
                                                 <ErrorMessage name="termsOfService" component="div"
-                                                              className="error-message"/>
-                                            </li>
+                                                              className="error-message"style={{color:'red'}}/>
+                                            </li> */}
                                             <li>
-                                                <button type ="submit" onClick={formik.handleSubmit}
+                                                <button type ="submit" 
                                                         className="signin-body-form-input-list register-btn">Register
                                                 </button>
                                             </li>
