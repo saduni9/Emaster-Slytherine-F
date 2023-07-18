@@ -77,7 +77,7 @@ export default function SignIn() {
                                                    name="email"
                                                    value={formik.values.email}
                                                    onChange={formik.handleChange} required/>
-                                            <ErrorMessage name="email" component="div" className="error-msg"/>
+                                            <ErrorMessage name="email" component="div" className="error-msg"style={{color:'red',}}/>
                                         </li>
                                         <li className="signin-body-form-input-list">
                                             <RiLockPasswordFill size={20}/>
@@ -86,7 +86,7 @@ export default function SignIn() {
                                                    name="password"
                                                    value={formik.values.password}
                                                    onChange={formik.handleChange} required/>
-                                            <ErrorMessage name="password" component="div" className="error-msg"/>
+                                            <ErrorMessage name="password" component="div" className="error-msg"style={{color:'red'}}/>
                                         </li>
 
 

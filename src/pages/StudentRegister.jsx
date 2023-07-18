@@ -84,13 +84,13 @@ export default function StudentRegister() {
                                                 <Field type="text" className="signin-username" placeholder="First Name"
                                                        name="firstName" required/>
                                                 <ErrorMessage name="firstName" component="div"
-                                                              className="error-message"/>
+                                                              className="error-message"style={{color:'red'}}/>
                                             </li>
                                             <li className="signin-body-form-input-list">
                                                 <GrMail size={20}/>
                                                 <Field type="email" className="signin-username" placeholder="Your email"
                                                        name="email" required/>
-                                                <ErrorMessage name="email" component="div" className="error-message"/>
+                                                <ErrorMessage name="email" component="div" className="error-message"style={{color:'red'}}/>
                                             </li>
                                             <li className="signin-body-form-input-list">
                                                 <RiLockPasswordFill size={20}/>
@@ -98,14 +98,14 @@ export default function StudentRegister() {
                                                        placeholder="Password"
                                                        name="password" required/>
                                                 <ErrorMessage name="password" component="div"
-                                                              className="error-message"/>
+                                                              className="error-message"style={{color:'red'}}/>
                                             </li>
                                             <li className="signin-body-form-input-list">
                                                 <RiLockPasswordLine size={20}/>
                                                 <Field type="password" className="signin-username"
                                                        placeholder="Repeat Password" name="repPassword" required/>
                                                 <ErrorMessage name="repPassword" component="div"
-                                                              className="error-message"/>
+                                                              className="error-message"style={{color:'red'}}/>
                                             </li>
                                             {/* <li className="signin-body-form-input-list-checkbox">
                                                 <label>
