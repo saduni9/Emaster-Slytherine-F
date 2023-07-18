@@ -21,6 +21,12 @@ import server from "../apis/server";
 const validationSchema = Yup.object().shape({
     firstName: Yup.string().required('Full name is required'),
     email: Yup.string().email('Invalid email').required('Email is required'),
+    // Define the 'email' field validation rule:
+    // - It should be a string
+    // - It should be a valid email format
+    // - If the value is not a valid email format, throw an error with the message 'Invalid email'
+    // - It is required to have a value
+    // - If the value is missing or empty, throw an error with the message 'Email is required'
     password: Yup.string().required('Password is required'),
     repPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match').required('Repeat password is required'),
     

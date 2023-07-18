@@ -94,23 +94,24 @@ export default function SingleCourse() {
                     alert(err.message);
                 }
             )
-        }else {
-            server.put("/student/unlikeCourse/" + id,
-                {},
-                {
-                    headers: {"token": localStorage.getItem('user')}
-                }
-            ).then(
-                (res) => {
-                    console.log(res.data);
-                    setLike(false);
-                }
-            ).catch(
-                (err) => {
-                    alert(err.message);
-                }
-            )
         }
+        // else {
+        //     server.put("/student/unlikeCourse/" + id,
+        //         {},
+        //         {
+        //             headers: {"token": localStorage.getItem('user')}
+        //         }
+        //     ).then(
+        //         (res) => {
+        //             console.log(res.data);
+        //             setLike(false);
+        //         }
+        //     ).catch(
+        //         (err) => {
+        //             alert(err.message);
+        //         }
+        //     )
+        // }
     }
 
     const initialValues = {

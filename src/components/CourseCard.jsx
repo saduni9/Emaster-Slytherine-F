@@ -158,7 +158,7 @@ export default function CourseCard() {
                                         </div>
                                         <div className="course-card-detail-content">
                                             <h3 className="course-card-title">{data.course_title}</h3>
-                                            <p className="course-card-teacher">{data.teacher_id}</p>
+                                            {/* <p className="course-card-teacher">{data.teacher_id}</p> */}
                                             <div className="course-card-rating-content">
                                                 {data.course_rate}
                                                 <div className="rating-star-set">
